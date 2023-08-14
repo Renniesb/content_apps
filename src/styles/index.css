@@ -10,3 +10,113 @@ body {
   color: #fff;
   background-color: #00a4bd;
 }
+.testimonial-container{
+  display: flex;
+  justify-content: center;
+}
+.testimonial {
+  display: flex;
+  justify-content: center;
+  width: 75vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.testimonial-text {
+  flex: 1;
+  margin-right: 20px;
+  position: relative;
+
+}
+
+.testimonial-text::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top:0;
+  height: 100%;
+  width: 1px;
+  background-color: #e95423;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle::before {
+content: '“';
+text-align: center;
+color: white;
+border: 2px solid white;
+z-index: 1;
+font-size: 42px;
+position: absolute;
+top: -5px;
+left: -34px; 
+width: 27px; 
+height: 27px; 
+border-radius: 50%;
+background-color: #e95423;
+}
+
+.circle::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: -24px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background-color: #e95423;
+}
+
+.more {
+  padding: 10px 20px;
+  border-radius: 2px;
+  background-color: #0a91ec;
+  color: white;
+}
+
+.citation {
+  color: #49505a;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
