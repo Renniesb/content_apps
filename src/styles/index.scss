@@ -1,4 +1,4 @@
-$citation_color: #3d434c;
+$testimonial_text_color: #6e7785;
 $quotation_orange: #fa5b26;
 $button_blue: #0a9af9;
 $button_hover_blue: #0774bc;
@@ -35,6 +35,10 @@ body {
 	flex: 1;
 	margin-right: 20px;
 	position: relative;
+    p {
+        color: $testimonial_text_color;
+        
+    }
 	&::before {
 		content: "";
 		position: absolute;
@@ -85,7 +89,6 @@ body {
 	}
 }
 .citation {
-	color: $citation_color;
 	font-size: 13px;
 }
 @media (max-width: 550px) {

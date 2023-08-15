@@ -31,6 +31,9 @@ body {
   margin-right: 20px;
   position: relative;
 }
+.testimonial-text p {
+  color: #6e7785;
+}
 .testimonial-text::before {
   content: "";
   position: absolute;
@@ -83,7 +86,6 @@ body {
 }
 
 .citation {
-  color: #3d434c;
   font-size: 13px;
 }
 
