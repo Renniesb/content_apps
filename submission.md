@@ -10,6 +10,8 @@ I completed all the requirements and the 8 bonus points and added extra features
 
 I'd add an all button to the radio buttons and implement a switch panel look to the radio buttons. I'd implement Context in React to enable passing data to children a little cleaner. I'd style the dropdown checkboxes more so they have a grey checkmark and a white background.
 
+I'd add more functionality to the fuzzy search.
+
 ## How did you deviate from the directions, if at all, and why?
 
 Added instructions for the user if their filter combination gave no results. Gave them a suggestion that they may want to clear filters and try again. I added a no image available placeholder when there are bad image links to improve user experience. I added the number of results.
