@@ -1,13 +1,125 @@
+$citation_color: #3d434c;
+$quotation_orange: #fa5b26;
+$button_blue: #0a9af9;
+$button_hover_blue: #0774bc;
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+}
+  
+.exercise-header {
+    padding: 1rem 0;
+    margin: 2rem 0;
+    text-align: center;
+    color: #fff;
+    background-color: #00a4bd;
+}
+
+// Exercise 1 - Testimonial Block
+
+.testimonial-container {
+	display: flex;
+	justify-content: center;
+}
+.testimonial {
+	display: flex;
+	justify-content: center;
+	width: 75vw;
+	max-width: 530px;
+	align-items: center;
+	justify-content: space-between;
+}
+.testimonial-text {
+	flex: 1;
+	margin-right: 20px;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		left: -20px;
+		top: 0;
+		height: 100%;
+		width: 1px;
+		background-color: $quotation_orange;
+	}
+}
+.circle {
+	position: relative;
+	&::before {
+		content: '“';
+		text-align: center;
+		color: white;
+		border: 2px solid white;
+		z-index: 1;
+		font-size: 42px;
+		position: absolute;
+		top: -5px;
+		left: -34px;
+		width: 27px;
+		height: 27px;
+		border-radius: 50%;
+		background-color: $quotation_orange;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: -23.6px;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: $quotation_orange;
+	}
+}
+.more {
+	padding: 10px 20px;
+	font-weight: 900;
+	border-radius: 2px;
+	background-color: $button_blue;
+	color: white;
+	cursor: pointer;
+	&:hover {
+		background-color: $button_hover_blue;
+	}
+}
+.citation {
+	color: $citation_color;
+	font-size: 13px;
+}
+@media (max-width: 550px) {
+	.circle {
+		&::after {
+			bottom: 58;
+		}
+	}
+	.testimonial {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 75vw;
+		max-width: 530px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.more {
+		margin-top: 20px;
+	}
+}
+
+// Exercise 2 - Filterable Content
+
 $dropdown_gray: rgb(119, 136, 153);
 $blue_links: rgb(0, 119, 255);
 $blue_links_hover: rgb(33, 67, 99);
-$font-family_1: 'Trebuchet MS', sans-serif;
-$background-color_1: rgba(119, 136, 153, 0.073);
-$background-color_2: #fff;
+$trebuchet_font: 'Trebuchet MS', sans-serif;
+$dropdown_background_color: rgba(119, 136, 153, 0.073);
+$dropdown_list_color: #fff;
 
 body {
-	margin: 0;
-	font-family: $font-family_1;
+	margin: 10px;
+	font-family: $trebuchet_font;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -29,15 +141,16 @@ body {
 	margin-right: 10px;
 	font-weight: 900;
 	color: $dropdown_gray;
-	background-color: $background-color_1;
+	background-color: $dropdown_background_color;
 }
 .option-selector {
+    margin-top: 10px;
 	font-size: 15px;
 	font-weight: 600;
 }
 .dropdown-list {
 	position: absolute;
-	background-color: $background-color_2;
+	background-color: $dropdown_list_color;
 	border: 1px solid #ccc;
 	padding: 10px;
 	z-index: 1;
@@ -142,7 +255,7 @@ input[type=checkbox] {
 	}
 }
 .controls {
-	height: 90px;
+	height: fit-content;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 20px;
@@ -174,7 +287,6 @@ input[type=checkbox] {
 		justify-content: space-evenly;
 		flex-direction: column;
 		align-items: center;
-		height: 200px;
 	}
 	.dropdown-filters {
 		display: flex;
@@ -197,7 +309,7 @@ input[type=checkbox] {
 		width: 300px;
 	}
 	.controls {
-		height: 100px;
+        align-items: baseline;
 	}
 	.image {
 		width: 100%;
@@ -214,6 +326,9 @@ input[type=checkbox] {
     .search-clear {
         margin-right: 15px;
     }
+    .option-selector {
+		margin-top: 10px;
+	}
 }
 @media (min-width: 768px) and (max-width: 1023px) {
 	.grid-container {
