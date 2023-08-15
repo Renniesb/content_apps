@@ -1,45 +1,35 @@
-export function filterContent(
-  content = [],
-  checkedGenres = [],
-  checkedYears = [],
-  contentTypeSelected = "",
-  searchTerm = ""
-) {
+export function filterContent(allContent, checkedGenres, checkedYears, contentTypeSelected, searchTerm) {
+  
+  // Create Sets for faster lookups of checked genres and years 
+  // Array.includes() has a time complexity o(n) Set.has() has a time complexity o(1)
+  const checkedGenresSet = new Set(checkedGenres);
+  const checkedYearsSet = new Set(checkedYears);
 
-  const filteredContent = content
-    .filter((media) => {
-      if (checkedGenres.length > 0) {
-        return media.genre.some((genre) => checkedGenres.includes(genre));
-      }
-      return true;
-    })
-    .filter((media) => {
-      if (checkedYears.length > 0) {
-        return checkedYears.includes(media.year);
-      }
-      return true;
-    })
-    .filter((media) => {
-        console.log("type", media.type)
-      if (contentTypeSelected === "movies") {
-        return media.type === "movie";
-      }
-      if (contentTypeSelected === "books") {
-        return media.type === "book";
-      }
-      return true;
-    })
-    .filter((media) => {
-      if (searchTerm === "") {
-        return true;
-      }
-      return media.title.toLowerCase().includes(searchTerm.toLowerCase());
-    })
-    .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
+  return allContent.filter(media => {
+    if (checkedGenres.length > 0 && !media.genre.some(genre => checkedGenresSet.has(genre))) {
+      return false;
+    }
 
-    return filteredContent
+    if (checkedYears.length > 0 && !checkedYearsSet.has(media.year)) {
+      return false;
+    }
+
+    if (contentTypeSelected === "movies" && media.type !== "movie") {
+      return false;
+    }
+
+    if (contentTypeSelected === "books" && media.type !== "book") {
+      return false;
+    }
+
+    if (searchTerm && !media.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return false;
+    }
+
+    return true;
+  }).slice().sort((a, b) => a.title.localeCompare(b.title));
 }
+
 
 export function filterAndSortGenres (arrays) {
   const combinedArray = [].concat(...arrays);

@@ -60,7 +60,7 @@ function App() {
     <div className="app">
       <div>
         <Controls {...filters} {...selections} {...selectionMethods} />
-        <Content content={data} {...selections} />
+        <Content allContent={data} {...selections} />
       </div>
     </div>
   );

@@ -190,16 +190,64 @@ body {
   }
   
   /* Mobile Styles */
-  @media (max-width: 767px) {
-    /* Styles for mobile screens */
-    /* Mobile Views */
+
+    /* Mobile Styles */
+  @media (max-width: 440px) {
+
+  
+  
+    .image {
+      width: 100%;
+    }
+  
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 75vw;
+    }
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      height: 200px;
+    }
+
+    .dropdown-filters {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-selector {
+      margin-top: 10px;
+    }
+
+    .search-clear {
+      margin-top: 10px;
+    }
+
+    .clear-filter {
+      margin-top: 10px;
+    }
+
+
+  }
+  @media (min-width: 441px) and (max-width: 767px) {
+
     .content-container {
       align-items: center;
       flex: none;
       width: 300px;
     }
+
+    .controls {
+      height: 100px;
+    }
   
-    /* Mobile Views */
   
     .image {
       width: 100%; /* Ensure images take up full width */

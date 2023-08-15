@@ -65,7 +65,7 @@ background-color: #e95423;
 content: '';
 position: absolute;
 bottom: 0;
-left: -24px;
+left: -23.6px;
 width: 8px;
 height: 8px;
 border-radius: 50%;
@@ -80,5 +80,27 @@ background-color: #e95423;
 }
 
 .citation {
-  color: #49505a;
+  color: #3d434c;
+  font-size: 13px;
 }
+
+  /* Mobile Styles */
+  @media (max-width: 550px) {
+    .circle::after {
+      bottom: 58;
+
+    }
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 75vw;
+      max-width: 530px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .more {
+        margin-top: 20px;
+    }
+  }

@@ -1,7 +1,7 @@
 import { filterContent } from "../helpers";
 
 const Content = ({
-  content,
+  allContent,
   checkedGenres,
   checkedYears,
   contentTypeSelected,
@@ -9,7 +9,7 @@ const Content = ({
 }) => {
 
   const filteredContent = filterContent(
-    content,
+    allContent,
     checkedGenres,
     checkedYears,
     contentTypeSelected,

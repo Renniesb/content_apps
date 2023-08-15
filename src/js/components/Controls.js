@@ -25,7 +25,7 @@ const Controls = ({
     return (
       <div className="controls">
         <div className="content-filters">
-          <div>
+          <div className="dropdown-filters">
             {genres.length > 0 && (
               <GenreFilter
               genres={genres}
