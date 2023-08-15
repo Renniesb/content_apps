@@ -53,7 +53,7 @@ const MultiSelectDropDown = ({ options, selectedOptions, setSelectedOptions, dro
                 checked={selectedOptions.includes(option)}
                 onChange={() => handleSelectedOptionsChange(option)}
               />
-              {option}
+              {option.toUpperCase()}
             </label>
           ))}
         </div>

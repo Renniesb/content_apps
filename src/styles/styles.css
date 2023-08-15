@@ -38,7 +38,7 @@ body {
     background-color: rgba(119, 136, 153, 0.073); ;
   }
   
-  .content-selector {
+  .option-selector {
     font-size: 15px;
     font-weight: 600;
   }
@@ -221,7 +221,7 @@ body {
       flex-direction: column;
     }
 
-    .content-selector {
+    .option-selector {
       margin-top: 10px;
     }
 

@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import ContentTypeSelector from "./ContentTypeSelector";
+import TwoOptionsSelector from "./TwoOptionsSelector";
 import { generateGenreDisplay } from "../helpers";
 import {generateYearsDisplay} from "../helpers";
 import MultiSelectDropDown from "./MultiSelectDropDown";
+import TwoOptionsSelector from "./TwoOptionsSelector";
+import SearchBar from './SearchBar';
 
-
-const Controls = ({
+const ContentControls = ({
     genres,
     years,
     checkedGenres,
@@ -21,6 +20,7 @@ const Controls = ({
   }) => {
    const [genreDisplay, setGenreDisplay] = useState("Genre");
    const [yearDisplay, setYearsDisplay] = useState("Year");
+
     useEffect(() => {
       setGenreDisplay(generateGenreDisplay(checkedGenres));
       setYearsDisplay(generateYearsDisplay(checkedYears));
@@ -52,24 +52,17 @@ const Controls = ({
               />
             )}
           </div>
-          <ContentTypeSelector
-            contentTypeSelected={contentTypeSelected}
-            setSelectedContentType={setSelectedContentType}
+          <TwoOptionsSelector
+            optionSelected={contentTypeSelected}
+            setSelectedOption={setSelectedContentType}
+            option1="movies"
+            option2="books"
+            title1="Movies"
+            title2="Books"
           />
         </div>
-  
         <div className="search-clear">
-          <div className="search-input-container">
-            <input
-              className="searchbar"
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              type="text"
-              placeholder="Search.."
-            />
-            <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          </div>
-  
+          <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
           <button className="clear-filter" onClick={clearFilters}>
             Clear Filters
           </button>
@@ -78,4 +71,4 @@ const Controls = ({
     );
 };
 
-  export default Controls;
+  export default ContentControls;

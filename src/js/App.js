@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchData } from "./api";
 import { filterAndSortGenres } from "./helpers";
-import Controls from "./components/Controls";
+import ContentControls from "./components/ContentControls";
 import Content from "./components/Content";
 // import "./../styles/App.css";
 
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="app">
       <div>
-        <Controls {...filters} {...selections} {...selectionMethods} />
+        <ContentControls {...filters} {...selections} {...selectionMethods} />
         <Content allContent={data} {...selections} />
       </div>
     </div>
