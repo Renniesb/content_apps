@@ -23,22 +23,22 @@ const SearchBar = ({ allContent, setSearchTerm, searchTerm }) => {
 
   return (
     <div className="search-input-container">
-      <input
-        className="searchbar"
-        value={searchTerm}
-        onChange={(event) => {
-          setSearchTerm(event.target.value);
-          handleFuzzySearch(event.target.value);
-        }}
-        type="text"
-        placeholder="Search.."
-      />
-      <FontAwesomeIcon icon={faSearch} className="search-icon" />
-      <ul>
-        {results.map((result, index) => {
-          return <li key={index}>{result.item}</li>;
-        })}
-      </ul>
+        <input
+          className="searchbar"
+          value={searchTerm}
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+            handleFuzzySearch(event.target.value);
+          }}
+          type="text"
+          placeholder="Search.."
+        />
+        <FontAwesomeIcon icon={faSearch} className="search-icon" />
+        <div className="searchbar-list">
+                {results.map((result, index) => {
+                    return <li key={index}>{result.item}</li>
+                })}
+        </div>
     </div>
   );
 };

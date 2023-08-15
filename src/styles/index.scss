@@ -228,6 +228,20 @@ input[type=checkbox] {
 	border: .2px solid rgb(155, 155, 155);
 	border-radius: 3px;
 }
+
+.searchbar-list {
+	li {
+		list-style: none;
+	}
+	position: absolute;
+	background-color: #ffffffbe;
+	z-index: 1;
+	overflow-y: scroll;
+	height: fit-content;
+	max-height: 100px;
+	min-height: 0px;
+	width: 180px;
+  }
 .search-input-container {
 	position: relative;
 }
