@@ -7,7 +7,6 @@ const Content = ({
   contentTypeSelected,
   searchTerm,
 }) => {
-
   const filteredContent = filterContent(
     allContent,
     checkedGenres,
@@ -18,7 +17,9 @@ const Content = ({
 
   return (
     <div className="grid-container">
-      {filteredContent.length > 0 && <p className="results-text">{filteredContent.length} Results</p>}
+      {filteredContent.length > 0 && (
+        <p className="results-text">Results: {filteredContent.length}</p>
+      )}
       {filteredContent.length === 0 && (
         <div className="content-container">
           <b>
