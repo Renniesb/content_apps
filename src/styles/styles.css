@@ -126,7 +126,6 @@ body {
     grid-gap: 20px;
     min-width: 50vw;
     border: 0.01px solid rgb(217, 213, 213);
-    border-bottom: none;
     padding: 15px;
   }
   

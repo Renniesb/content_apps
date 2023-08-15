@@ -1,8 +1,11 @@
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import GenreFilter from './GenreFilter';
-import YearsFilter from "./YearsFilter";
 import ContentTypeSelector from "./ContentTypeSelector";
+import { generateGenreDisplay } from "../helpers";
+import {generateYearsDisplay} from "../helpers";
+import MultiSelectDropDown from "./MultiSelectDropDown";
+
 
 const Controls = ({
     genres,
@@ -16,6 +19,12 @@ const Controls = ({
     searchTerm,
     setSearchTerm,
   }) => {
+   const [genreDisplay, setGenreDisplay] = useState("Genre");
+   const [yearDisplay, setYearsDisplay] = useState("Year");
+    useEffect(() => {
+      setGenreDisplay(generateGenreDisplay(checkedGenres));
+      setYearsDisplay(generateYearsDisplay(checkedYears));
+    }, [checkedGenres, checkedYears]);
     const clearFilters = () => {
       setCheckedGenres([]);
       setCheckedYears([]);
@@ -27,17 +36,19 @@ const Controls = ({
         <div className="content-filters">
           <div className="dropdown-filters">
             {genres.length > 0 && (
-              <GenreFilter
-              genres={genres}
-              checkedGenres={checkedGenres}
-              setCheckedGenres={setCheckedGenres}
+              <MultiSelectDropDown
+              options={genres}
+              selectedOptions={checkedGenres}
+              setSelectedOptions={setCheckedGenres}
+              dropDownDisplayText = {genreDisplay}
               />
             )}
-            {genres.length > 0 && (
-              <YearsFilter
-              years={years}
-              checkedYears={checkedYears}
-              setCheckedYears={setCheckedYears}
+            {years.length > 0 && (
+              <MultiSelectDropDown
+              options={years}
+              selectedOptions={checkedYears}
+              setSelectedOptions={setCheckedYears}
+              dropDownDisplayText ={yearDisplay}
               />
             )}
           </div>

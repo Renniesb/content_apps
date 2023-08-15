@@ -42,3 +42,19 @@ export function filterAndSortGenres (arrays) {
 
   return sortedArray;
 };
+
+export function generateGenreDisplay(checkedGenres){
+  if(checkedGenres.length === 0)
+    return "GENRE"
+  if(checkedGenres.length === 1)
+    return "1 GENRE"
+  return `${checkedGenres.length} GENRES`
+}
+
+export function generateYearsDisplay(checkedYears){
+  if(checkedYears.length === 0)
+    return "YEAR";
+  if(checkedYears.length === 1)
+    return "YEAR (1)"
+  return `YEAR (${checkedYears.length})`
+};
