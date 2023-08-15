@@ -3,7 +3,6 @@ import { fetchData } from "./api";
 import { filterAndSortGenres } from "./helpers";
 import ContentControls from "./components/ContentControls";
 import Content from "./components/Content";
-// import "./../styles/App.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -17,7 +16,7 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((responseData) => {
-        const genreArrays = responseData.map(data => data.genre);
+        const genreArrays = responseData.map((data) => data.genre);
 
         const sortedGenres = filterAndSortGenres(genreArrays);
 
@@ -59,7 +58,12 @@ function App() {
   return (
     <div className="app">
       <div>
-        <ContentControls {...filters} {...selections} {...selectionMethods} />
+        <ContentControls
+          allContent={data}
+          {...filters}
+          {...selections}
+          {...selectionMethods}
+        />
         <Content allContent={data} {...selections} />
       </div>
     </div>
