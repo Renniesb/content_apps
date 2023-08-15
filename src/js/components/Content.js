@@ -18,6 +18,7 @@ const Content = ({
 
   return (
     <div className="grid-container">
+      {filteredContent.length > 0 && <p className="results-text">{filteredContent.length} Results</p>}
       {filteredContent.length === 0 && (
         <div className="content-container">
           <b>

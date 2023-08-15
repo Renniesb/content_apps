@@ -221,6 +221,15 @@ input[type=checkbox] {
 	border: 0.01px solid rgb(217, 213, 213);
 	padding: 15px;
 	max-width: fit-content;
+	position: relative;
+}
+.results-text {
+	position: absolute;
+	padding-left: 15px;
+	z-index: 1;
+	top: 0;
+	color:gray;
+	font-size: 14px;
 }
 .searchbar {
 	padding: 10px;
