@@ -5,16 +5,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  .app-container {
-    display: flex;
-    align-items: flex-start;
-  }
-  
   .app {
     display: flex;
     justify-content: center;
@@ -124,9 +114,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    min-width: 50vw;
     border: 0.01px solid rgb(217, 213, 213);
     padding: 15px;
+    max-width: fit-content;
   }
   
   .searchbar {

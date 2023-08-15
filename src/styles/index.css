@@ -38,7 +38,7 @@ body {
   top:0;
   height: 100%;
   width: 1px;
-  background-color: #e95423;
+  background-color: #fa5b26;
 }
 
 .circle {
@@ -58,7 +58,7 @@ left: -34px;
 width: 27px; 
 height: 27px; 
 border-radius: 50%;
-background-color: #e95423;
+background-color: #fa5b26;
 }
 
 .circle::after {
@@ -69,19 +69,24 @@ left: -23.6px;
 width: 8px;
 height: 8px;
 border-radius: 50%;
-background-color: #e95423;
+background-color: #fa5b26;
 }
 
 .more {
   padding: 10px 20px;
+  font-weight: 900;
   border-radius: 2px;
-  background-color: #0a91ec;
+  background-color: #0a9af9;
   color: white;
+  cursor: pointer;
 }
-
+.more:hover {
+  background-color: #0774bc
+}
 .citation {
   color: #3d434c;
   font-size: 13px;
+  
 }
 
   /* Mobile Styles */
